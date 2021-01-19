@@ -63,12 +63,7 @@ TL = (629, 916)  # Torch
 def xp_buff():
     print(Colors.FAIL + "--REBUFFING--" + Colors.END_C)
 
-    # print("Timer went off")
     pag.click(HBL[0] + random.uniform(1.0, 5.0), HBL[1] + random.uniform(1.0, 5.0), duration=1)
-    # pag.moveTo(SBL[0] + random.uniform(1.0, 5.0), SBL[1] + random.uniform(1.0, 5.0), duration=1)
-    # pag.vscroll(-800)
-    #
-    # print("Done scroll?")
     pag.click(EXP[0] + random.uniform(1.0, 5.0), EXP[1] + random.uniform(1.0, 5.0), duration=1)
     pag.click(LCL[0] + random.uniform(1.0, 5.0), LCL[1] + random.uniform(1.0, 5.0), duration=1)
     pag.click(SCL[0] + random.uniform(1.0, 5.0), SCL[1] + random.uniform(1.0, 5.0), duration=1)
@@ -120,7 +115,7 @@ def found_monster(_monster):
     No_Num = ''.join([i for i in No_PNG[0] if not i.isdigit()])
     print(Colors.WARNING + "Looking for " + str(No_Num) + Colors.END_C)
 
-    get_screenshot('SM-G973U')
+    get_screenshot('Pixel 5')
     mi = c.imread('CurrentScreenshot.png')
     gmi = c.cvtColor(mi, c.COLOR_BGR2GRAY)
     s = c.imread(_monster, 0)
@@ -151,7 +146,7 @@ def found_monster(_monster):
 
 while True:
     CurrentTime = datetime.now()
-    for Monsters in create_monster_list(r"C:\Users\Nick Conn\Documents\GitHub\Overworld-Bot\Main\ScaledMonsters\*.png"):
+    for Monsters in create_monster_list(r"ScaledMonsters\*.png"):
         if found_monster(Monsters):
             # Hit Continue Button
             pag.moveTo(CBL[0], CBL[1], duration=.6)
