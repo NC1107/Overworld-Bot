@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Overworld Bot.iml" filepath="$PROJECT_DIR$/.idea/Overworld Bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Rework/.idea/Rework.iml" filepath="$PROJECT_DIR$/../Rework/.idea/Rework.iml" />
     </modules>
   </component>
 </project>
