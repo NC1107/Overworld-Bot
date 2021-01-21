@@ -8,6 +8,8 @@ import cv2 as c
 import Scripts.Buttons
 import Scripts.Rebuff
 import Scripts.Colors
+import os
+import keyboard
 
 
 class CurrentSetup:
@@ -39,7 +41,7 @@ class CurrentSetup:
 Setup = CurrentSetup()
 
 
-def beginfarming(device, farming, autobuff, start):
+def begin_farming(device, farming, autobuff, start):
     def create_monster_list(monster_directory):
         sml = []
         path = glob.glob(monster_directory)
@@ -97,6 +99,8 @@ def beginfarming(device, farming, autobuff, start):
     while farming:
         for Monsters in create_monster_list(r"Monsters\*.png"):
             current_time = datetime.now()
+            if keyboard.is_pressed('p'):
+                os.system("pause")
 
             if found_monster(Monsters):
                 # Hit Continue Button
@@ -148,7 +152,7 @@ def main():
     Setup.set_farming(Farming)
     if Setup.get_farming() == "True":
         print('\033[92m' + "----------Beginning Script.-----------" + '\033[0m')
-        beginfarming(Setup.get_device(), Setup.get_farming(), Setup.get_autobuff(), Start_time)
+        begin_farming(Setup.get_device(), Setup.get_farming(), Setup.get_autobuff(), Start_time)
 
     else:
         print('\033[91m' + "Process Done, Ending Script." + '\033[0m')
