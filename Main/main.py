@@ -131,13 +131,14 @@ def begin_farming(device, farming, autobuff, start):
                 # Hit 'x' Button
                 pag.click(Scripts.Buttons.Buttons.XBL[0] + random.uniform(1.0, 5.0),
                           Scripts.Buttons.Buttons.XBL[1] + random.uniform(1.0, 5.0), duration=1)
-                if autobuff:
-                    if start.hour + 1 == current_time.hour:
-                        if start.minute == current_time.minute:
-                            print(Scripts.Colors.Colors.WARNING +
-                                  "REBUFFING STATEMENT REACHED" + Scripts.Colors.Colors.END_C)
-                            Scripts.Rebuff.xp_buff()
-                            start = datetime.now()
+
+            if autobuff:
+                if start.hour + 1 == current_time.hour:
+                    if start.minute == current_time.minute:
+                        print(Scripts.Colors.Colors.WARNING +
+                              "REBUFFING STATEMENT REACHED" + Scripts.Colors.Colors.END_C)
+                        Scripts.Rebuff.xp_buff()
+                        start = datetime.now()
 
 
 def main():
