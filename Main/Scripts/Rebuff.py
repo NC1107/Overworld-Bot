@@ -1,5 +1,3 @@
-from datetime import datetime
-import time
 import pyautogui as pag
 import random
 import Scripts.Colors

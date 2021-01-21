@@ -7,7 +7,7 @@ while True:
     a = win.GetKeyState(0x01)
 
 
-    def addmonster():
+    def add_monster():
         x, y = pag.position()
         monster_logo = pag.screenshot(region=(x - 6, y - 6, 12, 12))
         save_file = str(input("Enter the monster name:\n"))
@@ -24,4 +24,4 @@ while True:
 
 
     if a != NoClick:
-        addmonster()
+        add_monster()

@@ -14,10 +14,11 @@ import keyboard
 
 class CurrentSetup:
 
-    def __init__(self, device='Test', farming='False', autobuff='False'):
+    def __init__(self, device='Test', farming='False', autobuff='False', firstbuff='False'):
         self._Device = device
         self._Farming = farming
         self._AutoBuff = autobuff
+        self._FirstBuff = firstbuff
 
     def get_device(self):
         return self._Device
@@ -36,6 +37,9 @@ class CurrentSetup:
 
     def set_autobuff(self, x):
         self._AutoBuff = x
+
+    def set_firstbuff(self, x):
+        self._FirstBuff = x
 
 
 Setup = CurrentSetup()
@@ -103,6 +107,8 @@ def begin_farming(device, farming, autobuff, start):
                 os.system("pause")
 
             if found_monster(Monsters):
+                if keyboard.is_pressed('p'):
+                    os.system("pause")
                 # Hit Continue Button
                 pag.moveTo(Scripts.Buttons.Buttons.CBL[0], Scripts.Buttons.Buttons.CBL[1], duration=.6)
 
@@ -146,6 +152,9 @@ def main():
     print(Scripts.Colors.Colors.OK_BLUE + "Starting Time: " + str(Start_time) + Scripts.Colors.Colors.END_C)
     Device = (input("Enter Device Model:\n"))
     Setup.set_device(Device)
+    FirstBuff = (input("buff immediately? True or False\n"))
+    Setup.set_firstbuff(FirstBuff)
+
     Autobuff = (input("Enable Autobuff? True or False\n"))
     Setup.set_farming(Autobuff)
 
