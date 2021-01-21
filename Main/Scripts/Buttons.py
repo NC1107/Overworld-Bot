@@ -6,7 +6,7 @@ class Buttons:
     DBL = (600, 882)  # DAttack Button Location
     VBL = (484, 980)  # Victory Button Location
     HBL = (582, 999)  # Heal Button Location
-    PBL = (641, 586)  # Potion Button Location
+    PBL = (630, 700)  # Potion Button Location
     XBL = (480, 1025)  # 'X' Button Location
     SBL = (480, 825)  # Location necessary for scroll
     EXP = (480, 861)  # EXP Potion
@@ -16,5 +16,4 @@ class Buttons:
     ACL = (320, 850)  # A Candle
     TL = (583, 966)  # Torch
 
-
-#CHECK LOCATION BASED ON YOUR PHONE
+# CHECK LOCATION BASED ON YOUR PHONE
