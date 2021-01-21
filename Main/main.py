@@ -12,34 +12,34 @@ import Scripts.Colors
 
 class CurrentSetup:
 
-    def __init__(self, Device='Test', Farming='False', AutoBuff='False'):
-        self._Device = Device
-        self._Farming = Farming
-        self._AutoBuff = AutoBuff
+    def __init__(self, device='Test', farming='False', autobuff='False'):
+        self._Device = device
+        self._Farming = farming
+        self._AutoBuff = autobuff
 
-    def Get_Device(self):
+    def get_device(self):
         return self._Device
 
-    def Get_Farming(self):
+    def get_farming(self):
         return self._Farming
 
-    def Get_AutoBuff(self):
+    def get_autobuff(self):
         return self._AutoBuff
 
-    def Set_Device(self, x):
+    def set_device(self, x):
         self._Device = x
 
-    def Set_Farming(self, x):
+    def set_farming(self, x):
         self._Farming = x
 
-    def Set_AutoBuff(self, x):
+    def set_autobuff(self, x):
         self._AutoBuff = x
 
 
 Setup = CurrentSetup()
 
 
-def BeginFarming(device, farming, autobuff, start):
+def beginfarming(device, farming, autobuff, start):
     def create_monster_list(monster_directory):
         sml = []
         path = glob.glob(monster_directory)
@@ -133,21 +133,22 @@ def BeginFarming(device, farming, autobuff, start):
                             print(Scripts.Colors.Colors.WARNING +
                                   "REBUFFING STATEMENT REACHED" + Scripts.Colors.Colors.END_C)
                             Scripts.Rebuff.xp_buff()
+                            start = datetime.now()
 
 
 def main():
     Start_time = datetime.now()
     print(Scripts.Colors.Colors.OK_BLUE + "Starting Time: " + str(Start_time) + Scripts.Colors.Colors.END_C)
     Device = (input("Enter Device Model:\n"))
-    Setup.Set_Device(Device)
+    Setup.set_device(Device)
     Autobuff = (input("Enable Autobuff? True or False\n"))
-    Setup.Set_Farming(Autobuff)
+    Setup.set_farming(Autobuff)
 
     Farming = (input("Enable Farming? True or False\n"))
-    Setup.Set_Farming(Farming)
-    if Setup.Get_Farming() == "True":
+    Setup.set_farming(Farming)
+    if Setup.get_farming() == "True":
         print('\033[92m' + "----------Beginning Script.-----------" + '\033[0m')
-        BeginFarming(Setup.Get_Device(), Setup.Get_Farming(), Setup.Get_AutoBuff(), Start_time)
+        beginfarming(Setup.get_device(), Setup.get_farming(), Setup.get_autobuff(), Start_time)
 
     else:
         print('\033[91m' + "Process Done, Ending Script." + '\033[0m')
